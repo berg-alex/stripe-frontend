@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -10,8 +10,15 @@ import './css/normalize.css';
 import './css/global.css';
 
 function App() {
+  React.useEffect(() => {
+    fetch("https://stripe-one-time-pay.herokuapp.com/")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  }, []);
+
   return (
     <Router>
+      <p>{!data ? "Loading..." : data}</p>
       <Switch>
         <Route path="/success.html">
           <Success />
