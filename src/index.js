@@ -1,4 +1,4 @@
-import {React, useEffect} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -20,8 +20,8 @@ function App() {
   }, []);
 
   return (
+    <div>
     <Router>
-      <p>{!data ? "Loading..." : data}</p>
       <Switch>
         <Route path="/success.html">
           <Success />
@@ -34,6 +34,8 @@ function App() {
         </Route>
       </Switch>
     </Router>
+    <p>{!data ? "Loading..." : data}</p>
+    </div>
   );
 }
 
