@@ -10,6 +10,9 @@ import './css/normalize.css';
 import './css/global.css';
 
 function App() {
+
+  const [data, setData] = React.useState(null);
+
   React.useEffect(() => {
     fetch("https://stripe-one-time-pay.herokuapp.com/")
       .then((res) => res.json())
