@@ -19,6 +19,7 @@
     "eject": "react-scripts eject"
   },
   "proxy": "http://0.0.0.0:4242",
+  "proxy": "https://stripe-one-time-pay.herokuapp.com",
   "eslintConfig": {
     "extends": "react-app"
   },
