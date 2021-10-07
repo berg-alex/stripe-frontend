@@ -14,7 +14,7 @@ function App() {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("https://stripe-one-time-pay.herokuapp.com/")
+    fetch("/https://stripe-one-time-pay.herokuapp.com/")
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);
